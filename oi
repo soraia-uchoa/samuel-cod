@@ -51,3 +51,58 @@ export default function App() {
   );
 }
 
+
+
+
+
+aula2
+App.js
+//Renderização Condicional
+import { Text, View, Button, TextInput } from 'react-native';
+import { useState } from 'react'
+
+export default function App() {
+
+  const[verificador, setVerificador] = useState(false)
+  const[usuario, setUsuario] = useState('')
+  const usuarioCorreto = 'usuarioMassa'
+
+  function verificaUsuario() {
+    if(usuario === usuarioCorreto){
+      setVerificador(true)
+    }else{
+      setVerificador(false)
+    }
+  }
+  
+  return (
+    <View>
+      { verificador ? 
+        (
+          <View>
+          </View>
+        ) 
+        : 
+        (
+          <View>
+          <Text>Login</Text>
+          <TextInput
+          placeholder="Digite o usuario desejado" 
+          value={usuario}
+          onChangeText={setUsuario}
+          />
+          <Button title='login' onPress=
+  {verificaUsuario} />
+          <Text style={{fontSize:18}}>Crie uma tela.</Text>
+          </View>
+        )
+      }
+    </View>
+  );
+}
+
+
+
+
+
+
